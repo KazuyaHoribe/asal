@@ -1,4 +1,3 @@
-
 <h1 align="center">
   <a href="https://sakana.ai/asal">
     <img width="600" alt="Discovered ALife Simulations" src="https://pub.sakana.ai/asal_blog_assets/cover_video_square-min.png"></a><br>
@@ -22,7 +21,7 @@ Automating the Search for Artificial Life with Foundation Models
 $^1$ MIT, $^2$ Sakana AI, $^3$ OpenAI, $^4$ The Swiss AI Lab IDSIA, $^5$ Independent
 
 ## Abstract
-With the recent Nobel Prize awarded for radical advances in protein discovery, foundation models (FMs) for exploring large combinatorial spaces promise to revolutionize many scientific fields. Artificial Life (ALife) has not yet integrated FMs, thus presenting a major opportunity for the field to alleviate the historical burden of relying chiefly on manual design and trial-and-error to discover the configurations of lifelike simulations. This paper presents, for the first time, a successful realization of this opportunity using vision-language FMs. The proposed approach, called *Automated Search for Artificial Life* (ASAL), (1) finds simulations that produce target phenomena, (2) discovers simulations that generate temporally open-ended novelty, and (3) illuminates an entire space of interestingly diverse simulations. Because of the generality of FMs, ASAL works effectively across a diverse range of ALife substrates including Boids, Particle Life, Game of Life, Lenia, and Neural Cellular Automata. A major result highlighting the potential of this technique is the discovery of previously unseen Lenia and Boids lifeforms, as well as cellular automata that are open-ended like Conway’s Game of Life. Additionally, the use of FMs allows for the quantification of previously qualitative phenomena in a human-aligned way. This new paradigm promises to accelerate ALife research beyond what is possible through human ingenuity alone.
+With the recent Nobel Prize awarded for radical advances in protein discovery, foundation models (FMs) for exploring large combinatorial spaces promise to revolutionize many scientific fields. Artificial Life (ALife) has not yet integrated FMs, thus presenting a major opportunity for the field to alleviate the historical burden of relying chiefly on manual design and trial-and-error to discover the configurations of lifelike simulations. This paper presents, for the first time, a successful realization of this opportunity using vision-language FMs. The proposed approach, called *Automated Search for Artificial Life* (ASAL), (1) finds simulations that produce target phenomena, (2) discovers simulations that generate temporally open-ended novelty, and (3) illuminates an entire space of interestingly diverse simulations. Because of the generality of FMs, ASAL works effectively across a diverse range of ALife substrates including Boids, Particle Life, Game of Life, Lenia, and Neural Cellular Automata. A major result highlighting the potential of this technique is the discovery of previously unseen Lenia and Boids lifeforms, as well as cellular automata that are open-ended like Conway's Game of Life. Additionally, the use of FMs allows for the quantification of previously qualitative phenomena in a human-aligned way. This new paradigm promises to accelerate ALife research beyond what is possible through human ingenuity alone.
 
 <div style="display: flex; justify-content: space-between;">
   <img src="https://pub.sakana.ai/asal_blog_assets/teaser.png" alt="Image 1" style="width: 48%;">
@@ -134,6 +133,122 @@ Everything you need is already in this repo.
 
 If, for some reason, you want to see more code and see what went into the experimentation that led to the creation of ASAL, then check out [this repo](https://github.com/SakanaAI/nca-alife).
   
+## Causal Emergence Analysis Framework
+
+This project extends the ASAL framework with causal emergence analysis tools that quantitatively measure emergence phenomena in complex systems simulations. These tools analyze the relationship between micro-level dynamics and macro-level features that "emerge" from them.
+
+### Key Components
+
+#### Emergence Metrics Module
+
+The causal emergence analysis calculates three primary metrics based on information theory:
+
+- **Delta (Δ)**: Measures downward causation - whether macro variables better predict future macro states than micro variables do
+- **Gamma (Γ)**: Measures causal decoupling - whether macro variables predict future micro states better than past micro states
+- **Psi (Ψ)**: Measures causal emergence - the additional information macro variables provide about future micro states beyond what's available from past micro states
+
+#### Supported Simulation Types
+
+- **Game of Life (GoL)**: Conway's cellular automaton showing complex emergence patterns
+- **Boids**: Autonomous agent simulation modeling flocking behavior
+- **Lenia**: Continuous cellular automaton with smooth transition functions
+
+### Using the Framework
+
+#### Basic Emergence Analysis
+
+```bash
+python causal_emergence.py
+```
+
+This runs a default Game of Life simulation for 1000 steps and analyzes emergence properties.
+
+#### Interactive Dashboard
+
+```bash
+python causal_dashboard_runner.py --simulation_type gol --n_steps 1000 --save_dir ./output --interactive
+```
+
+Creates a comprehensive dashboard visualizing emergence metrics and simulation dynamics.
+
+#### Parameter Search
+
+```bash
+python asal_parameter_search.py --simulation_type gol --use_asal --n_jobs 4 --visualize
+```
+
+Performs a systematic parameter search to find conditions maximizing emergence metrics.
+
+### Advanced Parameter Search Framework
+
+The repository includes an advanced parameter search framework that leverages ASAL's distributed computation capabilities:
+
+#### 1. ASAL Parameter Search Module (`asal_parameter_search.py`)
+- Efficient parameter exploration using JAX and ASAL framework
+- Support for both grid search and random sampling
+- Scalable parallel processing with multi-core CPU support
+- CUDA/GPU optimization for high-performance computing
+- Automatic result saving and detailed analysis dashboard generation
+
+#### 2. GPU Memory Management (`gpu_memory_utils.py`)
+- Real-time GPU usage monitoring
+- Automatic batch size estimation for memory optimization
+- Automatic GPU memory configuration for JAX and TensorFlow
+- Workload distribution across multiple GPUs
+
+#### 3. Results Management (`save_results.py`)
+- Summary and meta-analysis of search results
+- Automatic extraction of optimal parameter settings
+- Result archiving and compression
+- Cluster analysis and dimensionality reduction visualization
+
+### Usage Examples
+
+#### Parameter Search with ASAL Framework
+
+```bash
+python asal_parameter_search.py --simulation_type gol --use_asal --n_jobs 4 --visualize
+```
+
+#### Advanced Search Options
+
+```bash
+python asal_parameter_search.py --simulation_type boids --use_asal --search_mode random \
+    --n_samples 50 --n_seeds 5 --save_dir ./results/boids_search
+```
+
+#### Custom Parameter Ranges
+
+```bash
+python asal_parameter_search.py --simulation_type lenia --use_asal \
+    --custom_params lenia_params.json --max_combinations 200
+```
+
+#### Results Analysis
+
+```bash
+python save_results.py --input_dir ./results --action summarize
+```
+
+#### Extract Best Results
+
+```bash
+python save_results.py --input_dir ./results --action extract_best --min_metrics 0.2
+```
+
+### Methodology
+
+The causal emergence analysis is based on the information-theoretic framework from Rosas, Mediano, et al. (2020). The approach:
+
+1. Collects micro-state (S) and macro-state (M) time series data
+2. Processes these time series for information-theoretic analysis
+3. Calculates mutual information between different combinations of past and future states
+4. Computes conditional mutual information to isolate specific causal relationships
+
+### References
+
+- Rosas, F. E., Mediano, P. A., et al. (2020). Reconciling emergences: An information-theoretic approach to identify causal emergence in multivariate data. https://arxiv.org/abs/2004.08220
+
 ## Bibtex Citation
 To cite our work, you can use the following:
 ```

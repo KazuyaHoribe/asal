@@ -1,0 +1,12 @@
+# Emergence Metrics for GOL
+# Generated on 2025-04-10 17:25:13
+
+## Standard Metrics
+Delta (Downward Causation): 0.005564
+Gamma (Causal Decoupling): -0.015147
+Psi (Causal Emergence): 0.104355
+
+## Reconciling Metrics
+Delta_R (Downward Causation): -3.131485
+Gamma_R (Causal Decoupling): 0.064621
+Psi_R (Causal Emergence): 0.104459

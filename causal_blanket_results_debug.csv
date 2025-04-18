@@ -1,0 +1,3 @@
+index,param_0,param_1,MI_X_to_X,MI_Y_to_X,MI_X_to_Y,MI_Y_to_Y,CMI_X_to_X_given_Y,CMI_Y_to_Y_given_X,Independence,Interdependence,Integration,PID_X_unique1,PID_X_unique2,PID_X_redundancy,PID_X_synergy,PID_Y_unique1,PID_Y_unique2,PID_Y_redundancy,PID_Y_synergy,D_X,D_Y,D_XY,G_X,G_Y,G_XY
+234,-0.1123019,-0.7931206,0.0,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+94,-0.1123019,-0.7931206,0.0,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0

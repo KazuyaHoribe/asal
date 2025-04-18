@@ -1,0 +1,9 @@
+Parameter Search Results Summary
+===============================
+
+Simulation Type: gol
+Date/Time: 2025-04-11 05:17:33
+Total parameter combinations: 50400
+Seeds per combination: 3
+Total jobs: 151200
+Jobs completed successfully: 4439

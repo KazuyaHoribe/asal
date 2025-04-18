@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Causal Blanket Analysis Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .summary {
+            margin-bottom: 30px;
+        }
+        .particles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .particle-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            background-color: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            border: 1px solid #eee;
+        }
+        .metrics {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .metrics table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .metrics td, .metrics th {
+            border: 1px solid #ddd;
+            padding: 6px;
+            text-align: left;
+        }
+        .metrics th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Particle Lenia Causal Blanket Analysis</h1>
+
+        <div class="summary">
+            <h2>Summary Metrics</h2>
+            <img src="summary_metrics.png" alt="Summary Metrics">
+            <img src="synergy_scatter.png" alt="Synergy Scatter Plot">
+        </div>
+        <h2>Individual Particles</h2>
+        <div class="particles-grid">
+            <div class="particle-card">
+                <h3>Particle 234.0</h3>
+                <div class="metrics">
+                    <table>
+                        <tr><th>Parameter 0</th><td>-0.1123019</td></tr>
+                        <tr><th>Parameter 1</th><td>-0.7931206</td></tr>
+                        <tr><th>Timesteps</th><td>4.0</td></tr>
+                        <tr><th>MI(X→X)</th><td>1.0000</td></tr>
+                        <tr><th>MI(Y→Y)</th><td>1.0000</td></tr>
+                        <tr><th>D_XY</th><td>-1.0000</td></tr>
+                        <tr><th>G_XY</th><td>0.3333</td></tr>
+                    </table>
+                </div>
+                <img src="images/particle_positions_234.0.png" alt="Particle Positions">
+                <img src="images/time_series_234.0.png" alt="Time Series">
+                <img src="images/info_flow_234.0.png" alt="Information Flow">
+            </div>
+            <div class="particle-card">
+                <h3>Particle 94.0</h3>
+                <div class="metrics">
+                    <table>
+                        <tr><th>Parameter 0</th><td>-0.1123019</td></tr>
+                        <tr><th>Parameter 1</th><td>-0.7931206</td></tr>
+                        <tr><th>Timesteps</th><td>4.0</td></tr>
+                        <tr><th>MI(X→X)</th><td>1.0000</td></tr>
+                        <tr><th>MI(Y→Y)</th><td>1.0000</td></tr>
+                        <tr><th>D_XY</th><td>-1.0000</td></tr>
+                        <tr><th>G_XY</th><td>0.3333</td></tr>
+                    </table>
+                </div>
+                <img src="images/particle_positions_94.0.png" alt="Particle Positions">
+                <img src="images/time_series_94.0.png" alt="Time Series">
+                <img src="images/info_flow_94.0.png" alt="Information Flow">
+            </div>
+            <div class="particle-card">
+                <h3>Particle 25.0</h3>
+                <div class="metrics">
+                    <table>
+                        <tr><th>Parameter 0</th><td>1.5454295</td></tr>
+                        <tr><th>Parameter 1</th><td>-0.7352064</td></tr>
+                        <tr><th>Timesteps</th><td>4.0</td></tr>
+                        <tr><th>MI(X→X)</th><td>1.0000</td></tr>
+                        <tr><th>MI(Y→Y)</th><td>1.0000</td></tr>
+                        <tr><th>D_XY</th><td>-1.0000</td></tr>
+                        <tr><th>G_XY</th><td>0.3333</td></tr>
+                    </table>
+                </div>
+                <img src="images/particle_positions_25.0.png" alt="Particle Positions">
+                <img src="images/time_series_25.0.png" alt="Time Series">
+                <img src="images/info_flow_25.0.png" alt="Information Flow">
+            </div>
+            <div class="particle-card">
+                <h3>Particle 116.0</h3>
+                <div class="metrics">
+                    <table>
+                        <tr><th>Parameter 0</th><td>-0.1123019</td></tr>
+                        <tr><th>Parameter 1</th><td>-0.7931206</td></tr>
+                        <tr><th>Timesteps</th><td>4.0</td></tr>
+                        <tr><th>MI(X→X)</th><td>1.0000</td></tr>
+                        <tr><th>MI(Y→Y)</th><td>1.0000</td></tr>
+                        <tr><th>D_XY</th><td>-1.0000</td></tr>
+                        <tr><th>G_XY</th><td>0.3333</td></tr>
+                    </table>
+                </div>
+                <img src="images/particle_positions_116.0.png" alt="Particle Positions">
+                <img src="images/time_series_116.0.png" alt="Time Series">
+                <img src="images/info_flow_116.0.png" alt="Information Flow">
+            </div>
+            <div class="particle-card">
+                <h3>Particle 87.0</h3>
+                <div class="metrics">
+                    <table>
+                        <tr><th>Parameter 0</th><td>-0.1123019</td></tr>
+                        <tr><th>Parameter 1</th><td>-0.7931206</td></tr>
+                        <tr><th>Timesteps</th><td>4.0</td></tr>
+                        <tr><th>MI(X→X)</th><td>1.0000</td></tr>
+                        <tr><th>MI(Y→Y)</th><td>1.0000</td></tr>
+                        <tr><th>D_XY</th><td>-1.0000</td></tr>
+                        <tr><th>G_XY</th><td>0.3333</td></tr>
+                    </table>
+                </div>
+                <img src="images/particle_positions_87.0.png" alt="Particle Positions">
+                <img src="images/time_series_87.0.png" alt="Time Series">
+                <img src="images/info_flow_87.0.png" alt="Information Flow">
+            </div>
+            <div class="particle-card">
+                <h3>Particle 49.0</h3>
+                <div class="metrics">
+                    <table>
+                        <tr><th>Parameter 0</th><td>-0.1123019</td></tr>
+                        <tr><th>Parameter 1</th><td>-0.7931206</td></tr>
+                        <tr><th>Timesteps</th><td>4.0</td></tr>
+                        <tr><th>MI(X→X)</th><td>1.0000</td></tr>
+                        <tr><th>MI(Y→Y)</th><td>1.0000</td></tr>
+                        <tr><th>D_XY</th><td>-1.0000</td></tr>
+                        <tr><th>G_XY</th><td>0.3333</td></tr>
+                    </table>
+                </div>
+                <img src="images/particle_positions_49.0.png" alt="Particle Positions">
+                <img src="images/time_series_49.0.png" alt="Time Series">
+                <img src="images/info_flow_49.0.png" alt="Information Flow">
+            </div>
+            <div class="particle-card">
+                <h3>Particle 152.0</h3>
+                <div class="metrics">
+                    <table>
+                        <tr><th>Parameter 0</th><td>-0.1123019</td></tr>
+                        <tr><th>Parameter 1</th><td>-0.7931206</td></tr>
+                        <tr><th>Timesteps</th><td>4.0</td></tr>
+                        <tr><th>MI(X→X)</th><td>1.0000</td></tr>
+                        <tr><th>MI(Y→Y)</th><td>1.0000</td></tr>
+                        <tr><th>D_XY</th><td>-1.0000</td></tr>
+                        <tr><th>G_XY</th><td>0.3333</td></tr>
+                    </table>
+                </div>
+                <img src="images/particle_positions_152.0.png" alt="Particle Positions">
+                <img src="images/time_series_152.0.png" alt="Time Series">
+                <img src="images/info_flow_152.0.png" alt="Information Flow">
+            </div>
+            <div class="particle-card">
+                <h3>Particle 244.0</h3>
+                <div class="metrics">
+                    <table>
+                        <tr><th>Parameter 0</th><td>-0.1123019</td></tr>
+                        <tr><th>Parameter 1</th><td>-0.7931206</td></tr>
+                        <tr><th>Timesteps</th><td>4.0</td></tr>
+                        <tr><th>MI(X→X)</th><td>1.0000</td></tr>
+                        <tr><th>MI(Y→Y)</th><td>1.0000</td></tr>
+                        <tr><th>D_XY</th><td>-1.0000</td></tr>
+                        <tr><th>G_XY</th><td>0.3333</td></tr>
+                    </table>
+                </div>
+                <img src="images/particle_positions_244.0.png" alt="Particle Positions">
+                <img src="images/time_series_244.0.png" alt="Time Series">
+                <img src="images/info_flow_244.0.png" alt="Information Flow">
+            </div>
+            <div class="particle-card">
+                <h3>Particle 194.0</h3>
+                <div class="metrics">
+                    <table>
+                        <tr><th>Parameter 0</th><td>-0.1123019</td></tr>
+                        <tr><th>Parameter 1</th><td>-0.7931206</td></tr>
+                        <tr><th>Timesteps</th><td>4.0</td></tr>
+                        <tr><th>MI(X→X)</th><td>1.0000</td></tr>
+                        <tr><th>MI(Y→Y)</th><td>1.0000</td></tr>
+                        <tr><th>D_XY</th><td>-1.0000</td></tr>
+                        <tr><th>G_XY</th><td>0.3333</td></tr>
+                    </table>
+                </div>
+                <img src="images/particle_positions_194.0.png" alt="Particle Positions">
+                <img src="images/time_series_194.0.png" alt="Time Series">
+                <img src="images/info_flow_194.0.png" alt="Information Flow">
+            </div>
+            <div class="particle-card">
+                <h3>Particle 241.0</h3>
+                <div class="metrics">
+                    <table>
+                        <tr><th>Parameter 0</th><td>-0.1123019</td></tr>
+                        <tr><th>Parameter 1</th><td>-0.7931206</td></tr>
+                        <tr><th>Timesteps</th><td>4.0</td></tr>
+                        <tr><th>MI(X→X)</th><td>1.0000</td></tr>
+                        <tr><th>MI(Y→Y)</th><td>1.0000</td></tr>
+                        <tr><th>D_XY</th><td>-1.0000</td></tr>
+                        <tr><th>G_XY</th><td>0.3333</td></tr>
+                    </table>
+                </div>
+                <img src="images/particle_positions_241.0.png" alt="Particle Positions">
+                <img src="images/time_series_241.0.png" alt="Time Series">
+                <img src="images/info_flow_241.0.png" alt="Information Flow">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

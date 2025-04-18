@@ -134,3 +134,41 @@ webencodings==0.5.1
 websocket-client==1.8.0
 widgetsnbextension==4.0.13
 zipp==3.21.0
+
+# Core libraries
+numpy>=1.24.0
+matplotlib>=3.7.0
+scipy>=1.11.0
+jax>=0.4.10
+jaxlib>=0.4.10
+flax>=0.7.0
+optax>=0.1.7
+
+# For simulation visualization
+matplotlib>=3.7.0
+seaborn>=0.13.0
+scikit-learn>=1.3.0
+tqdm>=4.65.0
+
+# For interactive visualization
+plotly>=5.14.0
+ipython>=8.12.0
+
+# For CMA-ES optimization
+evosax>=0.1.0
+
+# Foundation models
+transformers>=4.30.0
+clip>=1.0
+torch>=2.0.0
+
+# For information theory calculations
+scikit-learn>=1.3.0
+
+# Helper libraries
+pandas>=2.0.0
+pillow>=10.0.0
+einops>=0.6.1
+
+# Automated testing (optional)
+pytest>=7.3.1
