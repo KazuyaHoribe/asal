@@ -1,0 +1,14 @@
+Error during analysis: No group keys passed!
+
+Traceback (most recent call last):
+  File "/home/kazuyahoribe/Dropbox/asal/asal_parameter_search.py", line 923, in main
+    best_individual, best_combined = analyze_search_results(results_df, output_dir=best_dir)
+  File "/home/kazuyahoribe/Dropbox/asal/parameter_search.py", line 226, in analyze_search_results
+    grouped = df_success.groupby(param_cols)[metrics].mean().reset_index()
+  File "/home/kazuyahoribe/.local/lib/python3.10/site-packages/pandas/core/frame.py", line 9183, in groupby
+    return DataFrameGroupBy(
+  File "/home/kazuyahoribe/.local/lib/python3.10/site-packages/pandas/core/groupby/groupby.py", line 1329, in __init__
+    grouper, exclusions, obj = get_grouper(
+  File "/home/kazuyahoribe/.local/lib/python3.10/site-packages/pandas/core/groupby/grouper.py", line 1071, in get_grouper
+    raise ValueError("No group keys passed!")
+ValueError: No group keys passed!

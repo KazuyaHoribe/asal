@@ -55,8 +55,8 @@ except ImportError as e:
 
 # Expanded parameter ranges for Game of Life
 DEFAULT_GOL_PARAMS = {
-    "grid_size": [16, 24, 32, 48, 64, 96, 128],
-    "init_density": [0.01, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.6],
+    "grid_size": [16, 24, 32],
+    "init_density": [0.1, 0.2, 0.3],
     # B/S notation parameters for Life-like cellular automata
     "birth": [
         [3],                  # Conway's Game of Life B3/S23
@@ -82,7 +82,7 @@ DEFAULT_GOL_PARAMS = {
         [1, 2, 3, 4, 5],      # Maze
         [3]                   # Serviettes
     ],
-    "n_steps": [250, 500, 750, 1000, 1500, 2000]
+    "n_steps": [250, 500]
 }
 
 # Expanded parameter ranges for Boids
@@ -713,17 +713,21 @@ def run_parameter_search(
         csv_path = os.path.join(run_dir, "search_results.csv")
         df.to_csv(csv_path, index=False)
         
+        # Calculate success rate here to ensure it's always defined
+        success_rate = 0.0
+        if 'success' in df.columns and len(df) > 0:
+            success_rate = df['success'].mean() * 100
+        
         # Excel format (with formatting)
         try:
             excel_path = os.path.join(run_dir, "search_results.xlsx")
             with pd.ExcelWriter(excel_path, engine='openpyxl') as writer:
                 df.to_excel(writer, sheet_name='Search Results', index=False)
                 # Create a summary sheet with success rate
-                success_rate = df['success'].mean() * 100
                 pd.DataFrame({
                     'Total Jobs': [len(df)],
-                    'Successful': [df['success'].sum()],
-                    'Failed': [len(df) - df['success'].sum()],
+                    'Successful': [df['success'].sum() if 'success' in df.columns else 0],
+                    'Failed': [len(df) - df['success'].sum() if 'success' in df.columns else len(df)],
                     'Success Rate (%)': [success_rate]
                 }).to_excel(writer, sheet_name='Summary')
         except ImportError:
@@ -743,7 +747,7 @@ def run_parameter_search(
             f.write(f"Total parameter combinations: {len(param_combinations)}\n")
             f.write(f"Seeds per combination: {n_seeds}\n")
             f.write(f"Total jobs: {len(jobs)}\n")
-            f.write(f"Jobs completed successfully: {df['success'].sum()}\n")
+            f.write(f"Jobs completed successfully: {df['success'].sum() if 'success' in df.columns else 0}\n")
             f.write(f"Success rate: {success_rate:.2f}%\n\n")
             
             if "Delta" in df.columns:
